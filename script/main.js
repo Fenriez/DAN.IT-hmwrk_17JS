@@ -1,13 +1,12 @@
 let size, color;
 
 $('.btn').on('click', function() {
-    // console.log($(this));
     $('<input type="text" class="size_input">').appendTo('body');    
     $('<input type="text" class="color_input">').appendTo('body');
     $('<button class="btn draw">').appendTo('body');
     
     $('.size_input').on('change', sizeInput);
-    $('.size_input').on('change', colorInput);
+    $('.color_input').on('change', colorInput);
     $('.draw').text('Нарисовать').on('click', drawCircle);
     
     $(this).detach();
@@ -24,6 +23,7 @@ function drawCircle() {
     $('<div>').css({
         height: size,
         width: size,
-        background: color
+        background: color,
+        borderRadius: '50%'
     }).appendTo('body');
 }
